@@ -13,6 +13,6 @@ while (count++ <= 9)
 {
 for (i = 0; i <= 9; i++)
 _putchar(i);
--_putchar('\n');
+_putchar('\n');
 }
 }
