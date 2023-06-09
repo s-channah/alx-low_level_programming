@@ -26,10 +26,10 @@ int _strlen_recursion(char *s)
 int _palindrome(char *s, int i, int j)
 {
 	if (s[i] == s[j])
-	{	
-	if (i > j / 2)
+	{
+		if (i > j / 2)
 			return (1);
-		return (_palindrome(s, i + 1, j + 1));
+		return (_palindrome(s, i + 1, j - 1));
 	}
 
 	return (0);
