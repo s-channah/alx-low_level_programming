@@ -1,4 +1,5 @@
- #include <stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - it takes all integers and returns the sum
@@ -26,9 +27,10 @@ int main(int argc, char *argv[])
 
 		}
 
-		printf("%d\n, sum);
 
-		return (0);
 
 	}
+
+	printf("%d\n", sum);
+	return (0);
 }
