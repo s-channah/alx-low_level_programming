@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /**
- * 
- * 
- *
- * 
+ * argstostr - concatenates all arguments of your program
+ * @ac: argument count
+ * @av: pointer to the array of arguments with size ac
+ * Return: a pointer to new string/ NULL if it fails
  */
 
 char *argstostr(int ac, char **av)
@@ -21,19 +21,19 @@ char *argstostr(int ac, char **av)
 			count++;
 
 	count = count + ac + 1;
-	
+
 	str = (char *)malloc(sizeof(char) * count);
-	
+
 	if (str == NULL)
 		return (NULL);
 
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j]; j++)
-			s[k++] = av[i][j];
-		s[k++] = '/n';
+			str[k++] = av[i][j];
+		str[k++] = '\n';
 	}
-	s[k] = '\0';
+	str[k] = '\0';
 
 	return (str);
 }
