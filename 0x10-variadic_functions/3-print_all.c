@@ -6,13 +6,14 @@
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int i = 0;
+	unsigned int i;
 	va_list args;
 	char *str;
 	int flag;
 
 	va_start(args, format);
-	while (format && format[i])
+	i = 0;
+	while (format != NULL && format[i] != '\0')
 	{
 		switch (format[i])
 		{
@@ -40,7 +41,7 @@ void print_all(const char * const format, ...)
 				break;
 		}
 		if (format[i + 1] != '\0' && flag == 0)
-			printf(",");
+			printf(", ");
 		i++;
 	}
 	printf("\n");
