@@ -32,9 +32,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	close(fd);
-
 	free(buffer);
+
+	close(fd);
 
 	return (nwritten);
 }
