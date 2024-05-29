@@ -1,0 +1,31 @@
+#do not set RM variable but you can use $(RM) twice only
+#do not use $(CC) more than once
+#do not use $(CFLAGS) but use flags in the variable
+
+ifeq (,$(wildcard m.h))
+$(error The m.h header file is missing)
+endif
+
+
+CC = gcc
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+NAME = school
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+.PHONY: all clean oclean fclean re
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean:
+	clean oclean
+
+re:
+	fclean all
